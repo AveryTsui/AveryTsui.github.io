@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>表格 × 圖片練習</title>
+  <style>
+    body {
+      font-family: "Noto Sans TC", Arial, sans-serif;
+      margin: 2em;
+      background: #f9f9f9;
+    }
+    h2 {
+      margin-bottom: 0.2em;
+    }
+    .table-scroll {
+      overflow-x: auto;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px #0001;
+      padding: 1em;
+      margin-bottom: 2em;
+    }
+    table {
+      width: 100%;
+      min-width: 600px;
+      border-collapse: collapse;
+      background: #fff;
+    }
+    th, td {
+      border: 1px solid #bbb;
+      padding: 0.7em 1em;
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      background: #e3eaf2;
+      font-weight: 600;
+    }
+    td img {
+      display: block;
+      width: 100%;
+      max-width: 320px;
+      height: auto;
+      margin-bottom: 0.5em;
+      border-radius: 6px;
+      box-shadow: 0 1px 4px #0002;
+    }
+    .caption {
+      font-size: 1.05em;
+      font-weight: 500;
+      margin-bottom: 0.2em;
+    }
+    @media (max-width: 700px) {
+      table { min-width: 480px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="table-scroll">
+<table>
+  <tr>
+    <th>分類</th>
+    <th>縮圖</th>
+    <th>標題與描述</th>
+    <th>拍攝日期</th>
+  </tr>
+  <tr>
+    <td rowspan="2">城市風景</td>
+    <td>
+      <img src="scene1.png" alt="台北車站地下道內的行人">
+    </td>
+    <td>過客<br>日日在我們身旁快速流動的，是一張張熟悉或陌生的臉孔，與眉頭深鎖與自己擦肩而過的人流。</td>
+    <td>2012-04-29</td>
+  </tr>
+  <tr>
+    <td>
+      <img src="scene2.png" alt="捷運站出口的行人">
+    </td>
+    <td>陌生人<br>來自各方的人們，各自有屬於自己的使命或想完成的小夢想。</td>
+    <td>2014-04-29</td>
+  </tr>
+  <tr>
+    <th colspan="4">山林</th>
+  </tr>
+  <tr>
+    <td>自然風景</td>
+    <td>
+      <img src="scene3.png" alt="濃霧環繞的樹林">
+    </td>
+    <td>迷霧森林<br>濃霧環繞於樹與樹之間，彷彿進入了另一個世界。</td>
+    <td>2017-10-30</td>
+  </tr>
+</table>
+</div>
+
+</body>
+</html>
