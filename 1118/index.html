@@ -38,6 +38,37 @@
       font-weight: 700;
     }
 
+    /* Brand (logo + text) above the menu */
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 24px 18px 24px;
+    }
+
+    .brand a {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .brand img {
+      width: 56px;
+      height: 56px;
+      object-fit: contain;
+      border-radius: 6px;
+      background: #fff;
+      flex-shrink: 0;
+    }
+
+    .brand .brand-text {
+      font-size: 13px;
+      line-height: 1.2;
+      color: #111;
+      font-weight: 700;
+    }
+
     .menu {
       list-style: none;
       padding: 0;
@@ -116,6 +147,13 @@
 
   <!-- Sidebar -->
   <aside class="sidebar">
+    <div class="brand">
+      <a href="https://www.ntue.edu.tw/" target="_blank" rel="noopener">
+        <img src="01.png" alt="NTUE logo">
+        <div class="brand-text">國立臺北教育大學<br>教學科技應用設計競賽</div>
+      </a>
+    </div>
+
     <h2>選單 MENU</h2>
 
     <ul class="menu">
