@@ -1,148 +1,266 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="zh-Hant">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>AVERY'S WEBSITE</title>
-    <!---1--->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <!---2--->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-  </head>
-  <body>
- <!-- Navbar --->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Navbar</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            Dropdown
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-                    </li>
-                </ul>
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
-            </div>
-        </div>
-    </nav>
-    <style>
-        .navbar-brand {
-            font-weight: bold;
-            font-size: 1.1rem;
-            letter-spacing: 1px;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        .navbar-brand img {
-            height: 32px;
-            width: 32px;
-            object-fit: contain;
-        }
-    </style>
-    <script>
-        // Optional: Prevent form submission for demo
-        document.addEventListener('DOMContentLoaded', function() {
-            document.querySelector('form[role="search"]').addEventListener('submit', function(e) {
-                e.preventDefault();
-            });
-        });
-    </script>
-    <script>
-        // Optional: Add a tooltip to the NTUE logo
-        document.addEventListener('DOMContentLoaded', function() {
-            var logo = document.getElementById('ntue-logo');
-            if (logo) {
-                logo.setAttribute('title', 'NTUE');
-            }
-        });
-    </script>
-    <script>
-        // Optional: Responsive font size for brand
-        window.addEventListener('resize', function() {
-            var brand = document.querySelector('.navbar-brand');
-            if (brand) {
-                if (window.innerWidth < 500) {
-                    brand.style.fontSize = '0.85rem';
-                } else {
-                    brand.style.fontSize = '1.1rem';
-                }
-            }
-        });
-    </script>
-    <script>
-        // Optional: Set initial font size
-        window.dispatchEvent(new Event('resize'));
-    </script>
-    <script>
-        // Optional: Add a little animation to the logo
-        document.addEventListener('DOMContentLoaded', function() {
-            var logo = document.getElementById('ntue-logo');
-            if (logo) {
-                logo.style.transition = 'transform 0.2s';
-                logo.addEventListener('mouseenter', function() {
-                    logo.style.transform = 'scale(1.15)';
-                });
-                logo.addEventListener('mouseleave', function() {
-                    logo.style.transform = 'scale(1)';
-                });
-            }
-        });
-    </script>
-    <script>
-        // Optional: Set document title for accessibility
-        document.title = "國立臺北教育大學114「教學科技應用設計競賽」實施辦法";
-    </script>
-    <script>
-        // Replace the brand text and add NTUE logo (01.png) with two-line title
-        document.addEventListener('DOMContentLoaded', function() {
-            var brand = document.querySelector('.navbar-brand');
-            if (brand) {
-                brand.innerHTML = `
-                    <img id="ntue-logo" src="01.png" alt="NTUE Logo">
-                    <div style="display: flex; flex-direction: column; line-height: 1.1;">
-                        <span style="font-weight: bold;">國立臺北教育大學</span>
-                        <span style="font-size: 0.95em;">114「教學科技應用設計競賽」實施辦法</span>
-                    </div>
-                `;
-            }
-        });
-    </script>
-    <script>
-        // Replace the brand text and add NTUE logo (01.png)
-        document.addEventListener('DOMContentLoaded', function() {
-            var brand = document.querySelector('.navbar-brand');
-            if (brand) {
-                brand.innerHTML = `
-                    <img id="ntue-logo" src="01.png" alt="NTUE Logo">
-                    國立臺北教育大學114「教學科技應用設計競賽」實施辦法
-                `;
-            }
-        });
-    </script>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>114 教學科技應用設計競賽</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Noto Sans TC", sans-serif;
+      background: #fafafa;
+      color: #222;
+    }
+
+    .layout {
+      display: flex;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      width: 250px;
+      background: #fff;
+      border-right: 1px solid #e5e5e5;
+      height: 100vh;
+      position: sticky;
+      top: 0;
+      padding: 24px 0;
+      overflow-y: auto;
+    }
+
+    .sidebar h2 {
+      font-size: 16px;
+      margin: 0;
+      padding: 0 24px 12px;
+      color: #111;
+      font-weight: 700;
+    }
+
+    .menu {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 24px 0;
+    }
+
+    .menu li a {
+      display: block;
+      padding: 10px 24px;
+      text-decoration: none;
+      color: #444;
+      font-size: 14px;
+      border-left: 3px solid transparent;
+    }
+
+    .menu li a:hover {
+      background: #f2f4f7;
+      border-left: 3px solid #007bff;
+      color: #007bff;
+    }
+
+    /* Content */
+    .content {
+      flex: 1;
+      padding: 40px 50px;
+    }
+
+    .content section {
+      margin-bottom: 60px;
+    }
+
+    .content h1 {
+      margin-top: 0;
+      font-size: 28px;
+    }
+
+    .content h2 {
+      font-size: 20px;
+      border-left: 4px solid #007bff;
+      padding-left: 10px;
+      margin-top: 40px;
+    }
+
+    .content p, .content li {
+      color: #555;
+      line-height: 1.7;
+      font-size: 15px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    /* Mobile */
+    @media (max-width: 900px) {
+      .layout {
+        flex-direction: column;
+      }
+      .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        border-right: none;
+        border-bottom: 1px solid #e5e5e5;
+      }
+      .content {
+        padding: 24px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="layout">
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <h2>選單 MENU</h2>
+
+    <ul class="menu">
+      <li><a href="#intro">活動簡介</a></li>
+      <li><a href="#rules">競賽規則</a></li>
+      <li><a href="#categories">競賽組別</a></li>
+      <li><a href="#schedule">報名與日程</a></li>
+      <li><a href="#process">競賽流程</a></li>
+      <li><a href="#judging">評分標準</a></li>
+      <li><a href="#awards">獎勵辦法</a></li>
+      <li><a href="#notes">注意事項</a></li>
+      <li><a href="#contact">聯絡資訊</a></li>
+    </ul>
+  </aside>
+
+  <!-- Content -->
+  <main class="content">
+
+    <!-- 活動簡介 -->
+    <section id="intro">
+      <h1>114 教學科技應用設計競賽</h1>
+      <p>為鼓勵學生將數位科技應用於教學現場，強化教材設計與創作能力，特舉辦本競賽。期望學生能靈活運用 VR、AI 技術及 Apple 教育工具，並結合數位媒體、互動設計及多元評量方式，設計具創新性與實用性的教學應用，增強學生於各領域之數位科技創作能力。</p>
+
+      <h2>辦理單位</h2>
+      <p>主辦單位：國立臺北教育大學 教學發展中心 </p>
+    </section>
+
+    <!-- 競賽規則 -->
+    <section id="rules">
+      <h2>競賽規則</h2>
+      <ul>
+        <li>參加對象：本校在學學生（含學士班、碩士班、碩士在職專班）。</li>
+        <li>每團隊成員人數：1 至 4 人，可邀請 1 位老師擔任指導老師。 </li>
+        <li>每位學生最多可報名 2 件作品，但不得以相同作品重複投件於不同類別。 </li>
+      </ul>
+    </section>
+
+    <!-- 組別 -->
+    <section id="categories">
+      <h2>競賽主題與組別</h2>
+
+      <h3>1. Uptale VR 教學應用設計組</h3>
+      <p>設計沉浸式教學場景，內容可包含國小課程、教育議題、真實情境相關應用與教學規劃，展現 VR 在教學現場的應用潛能。</p>
+
+      <h3>2. AI 小工具教學創新應用組</h3>
+      <p>使用 AI 工具（如 ChatGPT、生成式 AI、學習分析工具等）於教學現場，解決學習難題或提升學習成效。 </p>
+
+      <h3>3. Apple 教育應用設計組</h3>
+      <p>可包含結合 iPad／Mac 的數位教學設計，或利用 Swift / Swift Playgrounds 自行開發教育應用程式。 </p>
+    </section>
+
+    <!-- 日程 -->
+    <section id="schedule">
+      <h2>報名方式與日程</h2>
+
+      <h3>📌 報名期間</h3>
+      <p>即日起至 114 年 11 月 7 日（五）。 <br>
+      報名網址：<a href="https://forms.gle/Hs9SkDYpiAaB2J9p6" target="_blank">https://forms.gle/Hs9SkDYpiAaB2J9p6</a></p>
+
+      <h3>📌 繳件期間</h3>
+      <p>即日起至 114 年 12 月 14 日（日）。</p>
+
+      <h3>📌 得獎公布</h3>
+      <p>預計 115 年 1 月底於教學發展中心網站公布，並以 Email 或電話通知領獎。</p>
+    </section>
+
+    <!-- 流程 -->
+    <section id="process">
+      <h2>競賽流程</h2>
+
+      <h3>1. 競賽報名</h3>
+      <p>採線上報名方式，填妥報名資料後完成報名。若報名 Uptale VR 組別，主辦單位將另行以 Email 通知開通帳號。 </p>
+
+      <h3>2. 繳件資料</h3>
+      <ul>
+        <li>計畫書（PDF），內容包含：  
+          (1) 組別與作品名稱  
+          (2) 團隊介紹  
+          (3) 創作理念  
+          (4) 教學目標  
+          (5) 教學內容規劃  
+          (6) 預期成效 </li>
+
+        <li>成品：Uptale VR 成品、AI Demo、Apple 教案或 App 原型。 </li>
+
+        <li>作品導覽影片：MP4，10 分鐘以內、HD1080P。上傳至 YouTube，提供連結。 </li>
+
+        <li>個人資料保護聲明暨數位內容授權書。</li>
+      </ul>
+
+      <h3>3. 繳交方式</h3>
+      <ul>
+        <li>上傳網址：<a href="https://forms.gle/PQ1AEJ1xBo3yRTZd6" target="_blank">https://forms.gle/PQ1AEJ1xBo3yRTZd6</a></li>
+        <li>檔案命名：編號_團隊名_作品名_檔名（依內容命名）</li>
+        <li>所有檔案請壓縮成 zip 上傳</li>
+      </ul>
+    </section>
+
+    <!-- 評分 -->
+    <section id="judging">
+      <h2>評審標準</h2>
+      <ul>
+        <li>完整性：40% </li>
+        <li>創意表現及互動應用：30% </li>
+        <li>實踐效益及未來延展性：30%</li>
+      </ul>
+    </section>
+
+    <!-- 獎勵 -->
+    <section id="awards">
+      <h2>獎勵辦法</h2>
+      <ul>
+        <li>特優（1 件）：獎金 8,000 元，每人獎狀一張。</li>
+        <li>優選（1 件）：獎金 5,000 元，每人獎狀一張。 </li>
+        <li>佳作（2 件）：獎金 2,000 元，每人獎狀一張。</li>
+      </ul>
+
+      <p>註：主辦方得視參賽件數或作品水準，調整獲獎名次或從缺。</p>
+    </section>
+
+    <!-- 注意事項 -->
+    <section id="notes">
+      <h2>注意事項</h2>
+      <ul>
+        <li>參賽作品需為參賽者自行開發，如有智慧財產權侵害，由參賽者自行負責，並取消資格及追回獎項。</li>
+
+        <li>使用非原創素材時須註明來源（圖片、音樂等出版資訊）。 </li>
+
+        <li>著作人格權歸屬於參賽隊伍，但主辦單位擁有為推廣與教育目的之重製、修改與展示權。</li>
+
+        <li>主辦單位得邀請獲獎團隊參加後續課程與活動。 </li>
+      </ul>
+    </section>
+
+    <!-- 聯絡 -->
+    <section id="contact">
+      <h2>聯絡資訊</h2>
+      <p>主辦單位：國立臺北教育大學 教學發展中心</p>
+      <p>聯絡電話：02-1234-5678</p>
+      <p>電子郵件：example@ntue.edu.tw</p>
+    </section>
+
+  </main>
+
+</div>
+
+</body>
+</html>
