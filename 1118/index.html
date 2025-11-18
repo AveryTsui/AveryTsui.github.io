@@ -51,3 +51,98 @@
             </div>
         </div>
     </nav>
+    <style>
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .navbar-brand img {
+            height: 32px;
+            width: 32px;
+            object-fit: contain;
+        }
+    </style>
+    <script>
+        // Optional: Prevent form submission for demo
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector('form[role="search"]').addEventListener('submit', function(e) {
+                e.preventDefault();
+            });
+        });
+    </script>
+    <script>
+        // Optional: Add a tooltip to the NTUE logo
+        document.addEventListener('DOMContentLoaded', function() {
+            var logo = document.getElementById('ntue-logo');
+            if (logo) {
+                logo.setAttribute('title', 'NTUE');
+            }
+        });
+    </script>
+    <script>
+        // Optional: Responsive font size for brand
+        window.addEventListener('resize', function() {
+            var brand = document.querySelector('.navbar-brand');
+            if (brand) {
+                if (window.innerWidth < 500) {
+                    brand.style.fontSize = '0.85rem';
+                } else {
+                    brand.style.fontSize = '1.1rem';
+                }
+            }
+        });
+    </script>
+    <script>
+        // Optional: Set initial font size
+        window.dispatchEvent(new Event('resize'));
+    </script>
+    <script>
+        // Optional: Add a little animation to the logo
+        document.addEventListener('DOMContentLoaded', function() {
+            var logo = document.getElementById('ntue-logo');
+            if (logo) {
+                logo.style.transition = 'transform 0.2s';
+                logo.addEventListener('mouseenter', function() {
+                    logo.style.transform = 'scale(1.15)';
+                });
+                logo.addEventListener('mouseleave', function() {
+                    logo.style.transform = 'scale(1)';
+                });
+            }
+        });
+    </script>
+    <script>
+        // Optional: Set document title for accessibility
+        document.title = "國立臺北教育大學114「教學科技應用設計競賽」實施辦法";
+    </script>
+    <script>
+        // Replace the brand text and add NTUE logo (01.png) with two-line title
+        document.addEventListener('DOMContentLoaded', function() {
+            var brand = document.querySelector('.navbar-brand');
+            if (brand) {
+                brand.innerHTML = `
+                    <img id="ntue-logo" src="01.png" alt="NTUE Logo">
+                    <div style="display: flex; flex-direction: column; line-height: 1.1;">
+                        <span style="font-weight: bold;">國立臺北教育大學</span>
+                        <span style="font-size: 0.95em;">114「教學科技應用設計競賽」實施辦法</span>
+                    </div>
+                `;
+            }
+        });
+    </script>
+    <script>
+        // Replace the brand text and add NTUE logo (01.png)
+        document.addEventListener('DOMContentLoaded', function() {
+            var brand = document.querySelector('.navbar-brand');
+            if (brand) {
+                brand.innerHTML = `
+                    <img id="ntue-logo" src="01.png" alt="NTUE Logo">
+                    國立臺北教育大學114「教學科技應用設計競賽」實施辦法
+                `;
+            }
+        });
+    </script>
