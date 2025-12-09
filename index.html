@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Avery — Thing About Me</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--accent:#8894b7}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;color:#111;background:#fff}
+    /* Banner */
+    .banner{
+      position:relative;
+      height:60vh;
+      min-height:320px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:#000;
+      background-image: linear-gradient(rgba(255,255,255,0.70), rgba(255,255,255,0.70)), url('background.png');
+      background-size:cover;
+      background-position:center;
+    }
+    .banner-inner{max-width:1100px;width:100%;padding:40px;display:flex;justify-content:space-between;align-items:flex-start;position:relative;}
+    .brand{display:flex;flex-direction:column}
+    .banner-title{font-size:3.2rem;font-weight:800;letter-spacing:1px;margin:0}
+    .banner-sub{margin-top:12px;color:rgba(0,0,0,0.45);font-weight:400;font-size:1.1rem}
+    .menu{
+      position:absolute;
+      top:24px;
+      right:36px;
+      z-index:2;
+      align-self:auto;
+    }
+
+    /* 主選單（右上） */
+    .nav{margin:0;padding:0;list-style:none;display:flex;gap:12px}
+    .nav a{display:inline-block;padding:10px 18px;border-radius:8px;color:#000;text-decoration:none;font-weight:600;transition:background .18s, color .18s}
+    .nav a:hover,.nav a:focus{background:var(--accent);color:#fff;box-shadow:0 2px 8px rgba(136,148,183,0.08)}
+    .nav a.current{background:var(--accent);color:#fff}
+
+    /* 內容區塊 */
+    .section{padding:96px 24px 80px 24px;max-width:900px;margin:0 auto}
+    .section h2{font-size:2rem;font-weight:700;margin-bottom:24px;letter-spacing:1px;color:#222}
+    .section p{font-size:1.15rem;color:#444;line-height:1.9}
+
+    /* 響應式 */
+    @media (max-width:640px){
+      .banner{height:45vh}
+      .banner-inner{flex-direction:column;align-items:center;text-align:center;padding:24px;position:static;}
+      .menu{position:static;top:auto;right:auto;margin-top:16px;display:flex;justify-content:center;width:100%;}
+      .banner-title{font-size:2rem}
+      .section{padding:56px 10px 40px 10px}
+      .section h2{font-size:1.3rem;margin-bottom:16px}
+    }
+  </style>
+  <script>
+    // 平滑捲動主選單
+    document.addEventListener('DOMContentLoaded',function(){
+      document.querySelectorAll('.nav a').forEach(function(link){
+        link.addEventListener('click',function(e){
+          var href=this.getAttribute('href');
+          if(href.startsWith('#')){
+            var target=document.querySelector(href);
+            if(target){
+              e.preventDefault();
+              window.scrollTo({top:target.offsetTop-32,behavior:'smooth'});
+              document.querySelectorAll('.nav a').forEach(a=>a.classList.remove('current'));
+              this.classList.add('current');
+            }
+          }
+        });
+      });
+    });
+  </script>
+</head>
+<body>
+  <header class="banner" role="banner">
+    <nav class="menu" aria-label="主選單">
+      <ul class="nav">
+        <li><a href="#home" class="current">首頁</a></li>
+        <li><a href="#about">自我介紹</a></li>
+        <li><a href="#portfolio">作品集</a></li>
+      </ul>
+    </nav>
+    <div class="banner-inner">
+      <div class="brand">
+        <h1 class="banner-title">Avery-Thing About Me</h1>
+        <p class="banner-sub">簡約風個人網站</p>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="section">
+      <h2>首頁</h2>
+      <p>歡迎來到我的個人網站。</p>
+    </section>
+
+    <section id="about" class="section">
+      <h2>自我介紹</h2>
+      <p>這裡放自我介紹內容。</p>
+    </section>
+
+    <section id="portfolio" class="section">
+      <h2>作品集</h2>
+      <p>這裡放作品或連結。</p>
+    </section>
+  </main>
+</body>
+</html>
