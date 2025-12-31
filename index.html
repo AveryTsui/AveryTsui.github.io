@@ -99,6 +99,23 @@
       .home-hero .hero-left{flex:0 0 auto;position:relative}
       .float-card{width:260px;height:260px;position:static;top:auto}
     }
+    /* Illustration carousel (跑馬燈) */
+    .illustration-section .carousel{overflow:hidden;margin-top:12px}
+    .illustration-track{display:flex;gap:16px;align-items:center}
+    .illustration-item{flex:0 0 auto;width:320px;height:200px;border-radius:12px;overflow:hidden;box-shadow:0 10px 30px rgba(17,17,17,0.06)}
+    .illustration-item img{width:100%;height:100%;object-fit:cover;display:block}
+    .illustration-track.animate{animation:scroll-left 18s linear infinite}
+    .illustration-track.animate:hover{animation-play-state:paused}
+    @keyframes scroll-left{
+      0%{transform:translateX(0)}
+      100%{transform:translateX(-50%)}
+    }
+    @media (max-width:1000px){
+      .illustration-item{width:260px;height:170px}
+    }
+    @media (max-width:640px){
+      .illustration-item{width:200px;height:140px}
+    }
   </style>
   <script>
     // 平滑捲動主選單
@@ -143,6 +160,7 @@
       <ul class="nav">
         <li><a href="#home" class="current">首頁</a></li>
         <li><a href="#about">自我介紹</a></li>
+        <li><a href="#illustration">Illustration</a></li>
         <li><a href="#portfolio">網站設計與賞析：作品集</a></li>
       </ul>
     </nav>
@@ -173,6 +191,46 @@
     <section id="about" class="section">
       <h2>自我介紹</h2>
       <p>這裡放自我介紹內容。</p>
+    </section>
+
+    <section id="illustration" class="section illustration-section">
+      <h2>Illustration</h2>
+      <p>使用跑馬燈方式展示插畫作品（滑入暫停，點擊開啟原圖）。</p>
+      <div class="carousel" aria-hidden="false">
+        <div class="illustration-track animate" id="illustrationTrack" aria-label="插畫跑馬燈">
+          <div class="illustration-item" aria-hidden="false">
+            <img src="p0.png" alt="插畫 p0">
+          </div>
+          <div class="illustration-item" aria-hidden="false">
+            <img src="p00.png" alt="插畫 p00">
+          </div>
+          <div class="illustration-item" aria-hidden="false">
+            <img src="p1.png" alt="插畫 p1">
+          </div>
+          <div class="illustration-item" aria-hidden="false">
+            <img src="p2.png" alt="插畫 p2">
+          </div>
+          <div class="illustration-item" aria-hidden="false">
+            <img src="p4.png" alt="插畫 p4">
+          </div>
+          <!-- 重複一組以達到無縫循環效果 -->
+          <div class="illustration-item" aria-hidden="false">
+            <img src="p0.png" alt="插畫 p0">
+          </div>
+          <div class="illustration-item" aria-hidden="false">
+            <img src="p00.png" alt="插畫 p00">
+          </div>
+          <div class="illustration-item" aria-hidden="false">
+            <img src="p1.png" alt="插畫 p1">
+          </div>
+          <div class="illustration-item" aria-hidden="false">
+            <img src="p2.png" alt="插畫 p2">
+          </div>
+          <div class="illustration-item" aria-hidden="false">
+            <img src="p4.png" alt="插畫 p4">
+          </div>
+        </div>
+      </div>
     </section>
 
     <section id="portfolio" class="section">
