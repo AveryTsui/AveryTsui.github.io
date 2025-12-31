@@ -116,6 +116,14 @@
     @media (max-width:640px){
       .illustration-item{width:200px;height:140px}
     }
+    /* Social icon */
+    .social{margin-top:14px}
+    .social-link{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:8px;background:transparent;border:1px solid rgba(17,24,39,0.06);transition:transform .18s,box-shadow .18s}
+    .social-link svg{width:22px;height:22px;fill:var(--accent)}
+    .social-link:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(17,24,39,0.08)}
+    .hero-title-row{display:flex;align-items:center;gap:12px}
+    .hero-title-row h2{margin:0}
+    .social-inline{margin:0}
   </style>
   <script>
     // 平滑捲動主選單
@@ -159,7 +167,7 @@
     <nav class="menu" aria-label="主選單">
       <ul class="nav">
         <li><a href="#home" class="current">首頁</a></li>
-        <li><a href="#about">自我介紹</a></li>
+        <li><a href="#about">About Me</a></li>
         <li><a href="#illustration">Illustration</a></li>
         <li><a href="#portfolio">網站設計與賞析：作品集</a></li>
       </ul>
@@ -181,21 +189,30 @@
           </div>
         </div>
         <div class="hero-right">
-          <h2>崔智評</h2>
-          <p>A-verything about me</p>
-          <p>歡迎來到我的首頁。這裡放簡短的自我介紹或重要連結，讓訪客快速了解我。</p>
+          <div class="hero-title-row">
+            <h2>崔智評</h2>
+            <p class="social social-inline">
+              <a class="social-link" href="https://www.instagram.com/candytsui_02_02/" target="_blank" rel="noopener" aria-label="前往 Instagram">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 .001 6.001A3 3 0 0 0 12 9zm5.5-3.2a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2z"/>
+                </svg>
+              </a>
+            </p>
+          </div>
+          <p>𝐍𝐓𝐔𝐄𝐂𝐄𝐄  𝐀𝐯𝐞𝐫𝐲</p>
+          <p>ɪ ʜᴏᴘᴇ ʙᴇᴀᴜᴛɪꜰᴜʟ ᴛʜɪɴɢꜱ ʜᴀᴘᴘᴇɴ ᴛᴏ ʏᴏᴜ. ᴀɴᴅ ᴡʜᴇɴ ᴛʜᴇʏ ᴅᴏ, ɪ ʜᴏᴘᴇ ʏᴏᴜ ᴄᴀɴ ʙᴇʟɪᴇᴠᴇ ᴛʜᴀᴛ ʏᴏᴜ ᴀʀᴇ ᴡᴏʀᴛʜʏ ᴏꜰ ᴇᴠᴇʀʏ ꜱɪɴɢʟᴇ ᴏꜰ ᴛʜᴇᴍ.</p>
         </div>
       </div>
     </section>
 
     <section id="about" class="section">
-      <h2>自我介紹</h2>
+      <h2>About Me</h2>
       <p>這裡放自我介紹內容。</p>
     </section>
 
     <section id="illustration" class="section illustration-section">
       <h2>Illustration</h2>
-      <p>使用跑馬燈方式展示插畫作品（滑入暫停，點擊開啟原圖）。</p>
+      <p>滑入可暫停跑馬燈꒰✩´˘`✩꒱</p>
       <div class="carousel" aria-hidden="false">
         <div class="illustration-track animate" id="illustrationTrack" aria-label="插畫跑馬燈">
           <div class="illustration-item" aria-hidden="false">
@@ -235,10 +252,10 @@
 
     <section id="portfolio" class="section">
       <h2>網站設計與賞析：作品集</h2>
-      <p>作品集：</p>
+      <p>以下為這次課程的課堂練習成果</p>
       <div class="portfolio-grid">
         <a class="card card--large" href="http://averytsui.github.io/old_index.html" target="_blank" rel="noopener" aria-label="舊版首頁 - 查看作品">
-          <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=1400&q=80')"></div>
+          <div class="thumb" style="background-image:url('01.png')"></div>
           <div class="card-inner">
             <h3 class="card-title">舊版網站</h3>
             <div class="card-sub">old_index.html（舊版首頁）</div>
@@ -249,7 +266,7 @@
 
 
         <a class="card card--medium" href="http://averytsui.github.io/0930" target="_blank" rel="noopener" aria-label="0930 - 查看作品">
-          <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1520975912873-3eeb7c6f36f6?auto=format&fit=crop&w=1400&q=80')"></div>
+          <div class="thumb" style="background-image:url('下載.jpg')"></div>
           <div class="card-inner">
             <h3 class="card-title">0930</h3>
             <div class="card-sub">網站設計課程作品</div>
@@ -257,7 +274,7 @@
         </a>
 
         <a class="card card--medium" href="http://averytsui.github.io/1007" target="_blank" rel="noopener" aria-label="1007 - 查看作品">
-          <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1502880200586-7a4f5b6a2a3d?auto=format&fit=crop&w=1400&q=80')"></div>
+          <div class="thumb" style="background-image:url('下載 (1).jpg')"></div>
           <div class="card-inner">
             <h3 class="card-title">1007</h3>
             <div class="card-sub">互動與排版實作</div>
@@ -265,7 +282,7 @@
         </a>
 
         <a class="card card--medium" href="http://averytsui.github.io/1014" target="_blank" rel="noopener" aria-label="1014 - 查看作品">
-          <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1400&q=80')"></div>
+          <div class="thumb" style="background-image:url('40.jpg')"></div>
           <div class="card-inner">
             <h3 class="card-title">1014</h3>
             <div class="card-sub">個人名片</div>
@@ -273,7 +290,7 @@
         </a>
 
         <a class="card card--small" href="http://averytsui.github.io/1021" target="_blank" rel="noopener" aria-label="1021 - 查看作品">
-          <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1400&q=80')"></div>
+          <div class="thumb" style="background-image:url('99.jpg')"></div>
           <div class="card-inner">
             <h3 class="card-title">1021</h3>
             <div class="card-sub">個人網站練習</div>
@@ -281,7 +298,7 @@
         </a>
 
         <a class="card card--small" href="http://averytsui.github.io/1111" target="_blank" rel="noopener" aria-label="1111 - 查看作品">
-          <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1400&q=80')"></div>
+          <div class="thumb" style="background-image:url('下載.jpg')"></div>
           <div class="card-inner">
             <h3 class="card-title">1111</h3>
             <div class="card-sub">網頁設計練習</div>
@@ -289,7 +306,7 @@
         </a>
 
         <a class="card card--large" href="http://averytsui.github.io/1118/christmasevent_index.html" target="_blank" rel="noopener" aria-label="1118 - 查看作品">
-          <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1400&q=80')"></div>
+          <div class="thumb" style="background-image:url('1212.jpg')"></div>
           <div class="card-inner">
             <h3 class="card-title">1118</h3>
             <div class="card-sub">NTUE教學科技應用設計競賽</div>
