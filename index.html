@@ -50,6 +50,18 @@
     .section h2{font-size:2.2rem;font-weight:700;margin-bottom:24px;letter-spacing:0.6px;color:var(--accent)}
     .section p{font-size:1.1rem;color:var(--muted);line-height:1.9}
 
+    /* About: 左文右圖佈局 */
+    .about-grid{display:flex;gap:28px;align-items:flex-start}
+    .about-text{flex:1}
+    .about-photo{flex:0 0 320px}
+    .about-photo .photo-box{width:320px;height:320px;border-radius:12px;overflow:hidden;box-shadow:0 12px 30px rgba(17,24,39,0.08);background:var(--card-bg)}
+    .about-photo img{width:100%;height:100%;object-fit:cover;display:block}
+    @media (max-width:760px){
+      .about-grid{flex-direction:column}
+      .about-photo{flex:0 0 auto;width:100%}
+      .about-photo .photo-box{width:100%;height:260px}
+    }
+
     /* 作品集卡片樣式（整齊排列） */
     .portfolio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:24px;padding:0;align-items:start}
     .card{display:block;position:relative;border-radius:12px;overflow:hidden;text-decoration:none;color:inherit;box-shadow:0 10px 30px rgba(17,17,17,0.06);transition:transform .28s,box-shadow .28s;height:auto}
@@ -207,7 +219,20 @@
 
     <section id="about" class="section">
       <h2>About Me</h2>
-      <p>這裡放自我介紹內容。</p>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>College student & Artist (not a professional artist but passionate about it since I was little:3).</p>
+          <p>大家好 ᵕ̈ ᑋᵉᑊᑊᵒ 我是崔智評</p>
+          <p>目前就讀國立台北教育大學的兒童英語教育學系</p>
+          <p>興趣是畫畫、聽音樂以及運動(最喜歡羽球和排球)</p>
+          <p>目前正一面享受大學生活，一面探索未來的規劃⁽⁽ଘ( ˊᵕˋ )ଓ⁾⁾ </p>
+        </div>
+        <div class="about-photo">
+          <div class="photo-box" aria-hidden="false">
+            <img src="me.jpg" alt="Avery 照片">
+          </div>
+        </div>
+      </div>
     </section>
 
     <section id="illustration" class="section illustration-section">
