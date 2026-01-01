@@ -88,6 +88,17 @@
       .card--large{grid-column:span 1;aspect-ratio:4/3}
     }
 
+    /* Footer */
+    .site-footer{background:transparent;padding:32px 24px;color:var(--muted);border-top:1px solid rgba(17,24,39,0.06)}
+    .site-footer .footer-inner{max-width:var(--max-width);margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+    .site-footer .credits{font-size:0.95rem}
+    .site-footer .footer-links{display:flex;gap:12px}
+    .site-footer .contact{display:flex;flex-direction:column;align-items:flex-end;gap:6px;font-size:0.98rem}
+    .site-footer a{color:var(--muted);text-decoration:none}
+    @media (max-width:640px){
+      .site-footer .footer-inner{flex-direction:column;text-align:center}
+      .site-footer .contact{align-items:center}
+    }
     /* 響應式 */
     @media (max-width:640px){
       .banner{height:45vh}
@@ -339,7 +350,17 @@
         </a>
       </div>
     </section>
-  </main>
+    </main>
+    <footer class="site-footer" role="contentinfo">
+      <div class="footer-inner">
+        <div class="credits">© 2026 崔智評 — All rights reserved.</div>
+        <div class="contact" aria-label="聯絡資訊">
+          <div>Email: <a href="mailto:candy.cping20070202@gmail.com">candy.cping20070202@gmail.com</a></div>
+          <div>Instagram: <a href="https://www.instagram.com/candytsui_02_02/" target="_blank" rel="noopener">@candytsui_02_02</a></div>
+          <div>系所：國立臺北教育大學 兒童英語教育學系</div>
+        </div>
+      </div>
+    </footer>
   <script>
     document.addEventListener('DOMContentLoaded', function(){
       var section = document.getElementById('home');
