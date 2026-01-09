@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>2024-2025 台灣青少年心理健康趨勢與性別分析報告</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
     <style>
         :root {
             --primary-color: #2c3e50;
@@ -180,50 +180,53 @@
 </footer>
 
 <script>
-    // 性別比較圖表
-    const genderCtx = document.getElementById('genderChart').getContext('2d');
-    new Chart(genderCtx, {
-        type: 'bar',
-        data: {
-            labels: ['情緒困擾', '自殺意念', '拒學想法', '睡眠不足'],
-            datasets: [
-                {
-                    label: '男性 (%)',
-                    data: [12.8, 7.2, 16.5, 43.5],
-                    backgroundColor: '#5dade2'
-                },
-                {
-                    label: '女性 (%)',
-                    data: [22.4, 14.1, 24.8, 52.1],
-                    backgroundColor: '#af7ac5'
-                }
-            ]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            scales: { y: { beginAtZero: true, max: 60 } },
-            plugins: { legend: { position: 'top' } }
-        }
-    });
+document.addEventListener('DOMContentLoaded', function () {
+    if (typeof Chart === 'undefined') {
+        console.error('Chart.js 未載入，請檢查 CDN 路徑或網路連線。');
+        return;
+    }
 
-    // 趨勢比較圖表
-    const trendCtx = document.getElementById('trendChart').getContext('2d');
-    new Chart(trendCtx, {
-        type: 'bar',
-        data: {
-            labels: ['生成式 AI', '輔導老師', '心理專業人士', '不告訴任何人'],
-            datasets: [
-                { label: '2024 (%)', data: [5.2, 12.5, 7.1, 16.2], backgroundColor: '#bdc3c7' },
-                { label: '2025 (%)', data: [15.2, 11.8, 6.4, 17.0], backgroundColor: '#3498db' }
-            ]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            scales: { y: { beginAtZero: true, max: 20 } }
-        }
-    });
+    const genderEl = document.getElementById('genderChart');
+    if (genderEl && genderEl.getContext) {
+        const genderCtx = genderEl.getContext('2d');
+        new Chart(genderCtx, {
+            type: 'bar',
+            data: {
+                labels: ['情緒困擾', '自殺意念', '拒學想法', '睡眠不足'],
+                datasets: [
+                    { label: '男性 (%)', data: [12.8, 7.2, 16.5, 43.5], backgroundColor: '#5dade2' },
+                    { label: '女性 (%)', data: [22.4, 14.1, 24.8, 52.1], backgroundColor: '#af7ac5' }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: { y: { beginAtZero: true, max: 60 } },
+                plugins: { legend: { position: 'top' } }
+            }
+        });
+    }
+
+    const trendEl = document.getElementById('trendChart');
+    if (trendEl && trendEl.getContext) {
+        const trendCtx = trendEl.getContext('2d');
+        new Chart(trendCtx, {
+            type: 'bar',
+            data: {
+                labels: ['生成式 AI', '輔導老師', '心理專業人士', '不告訴任何人'],
+                datasets: [
+                    { label: '2024 (%)', data: [5.2, 12.5, 7.1, 16.2], backgroundColor: '#bdc3c7' },
+                    { label: '2025 (%)', data: [15.2, 11.8, 6.4, 17.0], backgroundColor: '#3498db' }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: { y: { beginAtZero: true, max: 20 } }
+            }
+        });
+    }
+});
 </script>
 
 </body>
