@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2024-2025 台灣青少年心理健康趨勢與性別分析報告</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #95a5a6;
+            --y2024-color: #bdc3c7;
+            --y2025-color: #3498db;
+            --male-color: #5dade2;
+            --female-color: #af7ac5;
+            --warning-color: #e67e22;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+        }
+
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--primary-color);
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 4rem 1rem;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+
+        section {
+            background: var(--card-bg);
+            padding: 2.5rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        h2 {
+            border-left: 6px solid var(--y2025-color);
+            padding-left: 1rem;
+            margin-top: 0;
+            font-size: 1.6rem;
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .comp-card {
+            background: #fff;
+            border: 1px solid #eee;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .comp-card .label { font-size: 0.9rem; color: var(--secondary-color); font-weight: bold; }
+        .comp-card .value-wrap { display: flex; justify-content: center; align-items: baseline; gap: 1rem; margin-top: 0.5rem; }
+        .comp-card .v2024 { color: var(--y2024-color); font-size: 1.2rem; text-decoration: line-through; }
+        .comp-card .v2025 { color: var(--warning-color); font-size: 2.2rem; font-weight: bold; }
+        .comp-card .trend { font-size: 0.85rem; padding: 2px 8px; border-radius: 4px; background: #fff3e0; color: #e67e22; }
+
+        .chart-container { height: 350px; margin: 2rem 0; }
+
+        .policy-box {
+            background: #f0f7ff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px dashed var(--y2025-color);
+        }
+
+        footer { text-align: center; padding: 3rem; color: #bdc3c7; font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+
+<header>
+    <p style="letter-spacing: 2px; opacity: 0.8;">資料科學教育應用概論期末報告：視覺化圖表</p>
+    <h1>台灣青少年心理健康數據分析：趨勢與政策反思</h1>
+    <p>數據來源：兒童福利聯盟調查分析（有效樣本 N=7,007）</p>
+</header>
+
+<div class="container">
+
+    <section>
+        <h2>一、關鍵指標年度對比 (2024 vs 2025)</h2>
+        <div class="comparison-grid">
+            <div class="comp-card">
+                <div class="label">中度以上情緒困擾比例</div>
+                <div class="value-wrap"><span class="v2024">16.5%</span><span class="v2025">17.7%</span><span class="trend">↑ 1.2%</span></div>
+            </div>
+            <div class="comp-card">
+                <div class="label">中度以上自殺意念</div>
+                <div class="value-wrap"><span class="v2024">9.2%</span><span class="v2025">10.8%</span><span class="trend">↑ 1.6%</span></div>
+            </div>
+            <div class="comp-card">
+                <div class="label">睡眠不足比例</div>
+                <div class="value-wrap"><span class="v2024">43.2%</span><span class="v2025">47.9%</span><span class="trend">↑ 4.7%</span></div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>二、性別差異分析：女性面臨更嚴峻挑戰</h2>
+        <p>資料顯示，女性青少年在各項負面心理指標的盛行率與成長速度均顯著高於男性，是需要高度關注的高風險族群。</p>
+        <div class="chart-container">
+            <canvas id="genderChart"></canvas>
+        </div>
+        <div style="background: #fcf3cf; padding: 1rem; border-radius: 8px; font-size: 0.95rem;">
+            <strong>數據洞察：</strong>女性在情緒困擾與自殺意念的比例幾乎為男性的 1.5 倍至 2 倍。此外，女性求助意願亦較低，且更傾向選擇不告訴任何人或尋求網路/AI 協助。
+        </div>
+    </section>
+
+    <section>
+        <h2>三、求助對象趨勢：數位轉向現象</h2>
+        <div class="chart-container">
+            <canvas id="trendChart"></canvas>
+        </div>
+        <p style="font-size: 0.9rem; color: #666;">
+            * <strong>生成式 AI</strong> 的求助比例首度超越<strong>學校輔導老師</strong>，反映傳統輔導體系在數位原生世代中的接觸率面臨挑戰。
+        </p>
+    </section>
+
+    <section>
+        <h2>四、身心調適假：政策落後的警訊</h2>
+        <div class="policy-box">
+            <p>儘管心理困擾率上升（17.7%），但 2025 年<strong>身心調適假的使用率僅 6.0%</strong>。這顯示政策執行面與學生的實際需求存在巨大斷層。</p>
+            <p><strong>學生面臨的四大核心阻礙：</strong></p>
+            <table style="width: 100%; border-collapse: collapse; margin-top: 1rem;">
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #d0e4f5;"><strong>認知門檻</strong></td>
+                    <td style="padding: 10px; border: 1px solid #d0e4f5;">對假別規定與申請細節不清楚</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #d0e4f5;"><strong>外部壓力</strong></td>
+                    <td style="padding: 10px; border: 1px solid #d0e4f5;">老師、家長對於心理假的負面評價</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #d0e4f5;"><strong>心理汙名</strong></td>
+                    <td style="padding: 10px; border: 1px solid #d0e4f5;">擔心請假後被同儕貼上標籤</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #d0e4f5;"><strong>行政阻礙</strong></td>
+                    <td style="padding: 10px; border: 1px solid #d0e4f5;">學校申請流程繁瑣，缺乏友善機制</td>
+                </tr>
+            </table>
+        </div>
+    </section>
+    <section>
+        <h2>四、數據洞察總結 (Data Insights)</h2>
+        <ul>
+            <li><strong>情緒惡化與求助退縮：</strong> 數據顯示情緒越嚴重的青少年，求助比例越低。這種「負相關」現象在 2025 年變得更為顯著。</li>
+            <li><strong>數位避風港效應：</strong> AI 求助率的激增並非替代了專業醫療，而是填補了學生因「汙名化」而不願求助親友的空白。</li>
+            <li><strong>性別差異加劇：</strong> 女性青少年在各項負面心理指標的增長速度均高於男性。</li>
+        </ul>
+    </section>
+
+</div>
+
+<footer>
+    <p>引用：兒童福利聯盟 2024-2025 年度調查報告分析</p>
+    <p>© 2026 資料科學教育應用概論 期末報告</p>
+</footer>
+
+<script>
+    // 性別比較圖表
+    const genderCtx = document.getElementById('genderChart').getContext('2d');
+    new Chart(genderCtx, {
+        type: 'bar',
+        data: {
+            labels: ['情緒困擾', '自殺意念', '拒學想法', '睡眠不足'],
+            datasets: [
+                {
+                    label: '男性 (%)',
+                    data: [12.8, 7.2, 16.5, 43.5],
+                    backgroundColor: '#5dade2'
+                },
+                {
+                    label: '女性 (%)',
+                    data: [22.4, 14.1, 24.8, 52.1],
+                    backgroundColor: '#af7ac5'
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: { y: { beginAtZero: true, max: 60 } },
+            plugins: { legend: { position: 'top' } }
+        }
+    });
+
+    // 趨勢比較圖表
+    const trendCtx = document.getElementById('trendChart').getContext('2d');
+    new Chart(trendCtx, {
+        type: 'bar',
+        data: {
+            labels: ['生成式 AI', '輔導老師', '心理專業人士', '不告訴任何人'],
+            datasets: [
+                { label: '2024 (%)', data: [5.2, 12.5, 7.1, 16.2], backgroundColor: '#bdc3c7' },
+                { label: '2025 (%)', data: [15.2, 11.8, 6.4, 17.0], backgroundColor: '#3498db' }
+            ]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: { y: { beginAtZero: true, max: 20 } }
+        }
+    });
+</script>
+
+</body>
+</html>
